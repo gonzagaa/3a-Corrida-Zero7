@@ -31,8 +31,8 @@ if (larguraDaTela < 800) {
       });
 } else {
     var swiper3 = new Swiper(".mySwiper3", {
-        slidesPerView: 3,
-        spaceBetween: 30,
+        slidesPerView: 4,
+        spaceBetween: 20,
         loop: true,
         grabCursor: true,
         pagination: {
@@ -42,45 +42,61 @@ if (larguraDaTela < 800) {
       });
 }
 
-// Seleciona os novos botões para abrir o modal
-const openModalButtons = document.querySelectorAll('.openModalForm');
-const modalOverlay = document.getElementById('modalOverlay');
-const closeModalButton = document.getElementById('closeModal');
+if (larguraDaTela < 800) {
+  var swiper4 = new Swiper(".mySwiper4", {
+      grabCursor: true,
+      autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      spaceBetween: 20,
+    });
+} else {
+  var swiper4 = new Swiper(".mySwiper4", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+}
 
-// Variável para armazenar a origem do modal (WhatsApp ou Obrigado)
-let redirectType = null;
+const capaJhone = document.getElementById("depoimentoJhone");
+  const modalJhone = document.getElementById("modalJhone");
+  const videoContainer = document.getElementById("video-containerJhone");
+  const closeBtn = document.querySelector(".close-depoimento");
 
-// Função para abrir o modal e definir o tipo de redirecionamento
-function openModal(event) {
-    modalOverlay.classList.add('active');
+  capaJhone.addEventListener("click", () => {
+    // Exibe o modal
+    modalJhone.style.display = "flex";
 
-    // Verifica qual botão foi clicado e define o tipo de redirecionamento
-    if (event.target.closest('.btn-whatsapp-pulse')) {
-        redirectType = 'whatsapp';
-    } else {
-        redirectType = 'obrigado';
+    // Insere o iframe com autoplay
+    videoContainer.innerHTML = `
+      <iframe src="https://www.youtube.com/embed/ShcucfOriyI?autoplay=1&si=zB2kYOP0X8xTSmZY"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    `;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    // Esconde o modal e remove o iframe
+    modalJhone.style.display = "none";
+    videoContainer.innerHTML = "";
+  });
+
+  // Fecha o modal clicando fora do conteúdo
+  window.addEventListener("click", (e) => {
+    if (e.target === modalJhone) {
+      modalJhone.style.display = "none";
+      videoContainer.innerHTML = "";
     }
-}
-
-// Função para fechar o modal
-function closeModal() {
-    modalOverlay.classList.remove('active');
-    redirectType = null; // Reseta a variável
-}
-
-// Adiciona evento para abrir o modal nos novos botões
-openModalButtons.forEach(button => {
-    button.addEventListener('click', openModal);
-});
-
-// Fecha o modal ao clicar no botão de fechar
-if (closeModalButton) {
-    closeModalButton.addEventListener('click', closeModal);
-}
-
-// Fecha o modal ao clicar na overlay
-modalOverlay.addEventListener('click', (event) => {
-    if (event.target === modalOverlay) {
-        closeModal();
-    }
-});
+  });

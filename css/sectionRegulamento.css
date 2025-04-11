@@ -18,7 +18,7 @@
     flex-direction: column;
     text-align: center;
 
-    background: linear-gradient(to bottom, #000e1a, #000205);
+    background: linear-gradient(130deg, #1C1C1C, #080808);
     padding: 2rem;
     padding-block: 3rem;
     border-radius: 1rem;
@@ -65,6 +65,7 @@
     gap: 1rem;
     filter: brightness(1.3);
 }
+
 @media (min-width: 1080px) {
     section#regulamento .cards {
         display: grid;

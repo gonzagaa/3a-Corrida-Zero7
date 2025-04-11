@@ -60,7 +60,31 @@
     width: 100%;
 }
 
+#obrigado h3 {
+    color: #ffffff;
+    font-size: 2rem;
+  
+    font-family: var(--ncs);
+    text-transform: uppercase;
+    font-weight: 500;
+
+    margin-bottom: 2rem;
+}
+
+#obrigado h3 span {
+    font-family: var(--ncs);
+    background: linear-gradient(45deg, #1da4f3, #056ba6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 @media (min-width: 1080px) {
+    section#obrigado .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     section#obrigado header {
         display: flex;
         flex-direction: column;
@@ -68,6 +92,8 @@
         justify-content: center;
 
         margin-top: -2%;
+
+        width: 50%;
     }
 
     section#obrigado header h2 {

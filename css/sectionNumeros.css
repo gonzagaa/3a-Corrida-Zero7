@@ -65,11 +65,12 @@
     align-items: center;
     flex-direction: column;
 
-    background: linear-gradient(to bottom, #001325, #000917);
+    background: linear-gradient(130deg, #1C1C1C, #080808);
 }
 
 #numeros .cards .borderCard {
     background: linear-gradient(180deg,#1da4f3, #1da4f3, #1da4f3, #00000000 60%);
+    background: linear-gradient(180deg, #5a5a5a, #161616 30%);
 }
 
 #numeros .cards .card h3 {
@@ -77,7 +78,6 @@
     margin-top: 1rem;
     line-height: .8;
     color: #d2d2d2;
-    font-family: var(--ncs);
     text-transform: uppercase;
 
     position: absolute;
