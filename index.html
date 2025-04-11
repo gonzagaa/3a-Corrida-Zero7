@@ -21,6 +21,9 @@
     />
     <link rel="stylesheet" href="./css/index.css">
 
+    <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/bfe861c8-ab4c-47c1-9b5d-67742fbce12f-loader.js" ></script>
+
+
       <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -47,7 +50,11 @@
 
                   <p>Cadastre-se para ter acesso a oferta especial em nosso plano de avaliação e participação na quinta edição da Corrida Zero7. <span>O vencedor sai de contrato assinado!</span></p>
 
-                  <div role="main" id="corrida-zero7-captacao-72bdbbbbbb9d8f539277"></div><script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script><script type="text/javascript"> new RDStationForms('corrida-zero7-captacao-72bdbbbbbb9d8f539277', 'null').createForm();</script>
+                  <!-- Container do formulário da RD -->
+                  <div role="main" id="corrida-zero7-captacao-72bdbbbbbb9d8f539277"></div>
+
+                  <!-- Script oficial da RD Station -->
+                  <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
 
                   <p class="obs">A oferta será liberada no dia 21 de abril às 19h somente para quem se cadastrar.</p>
             </div>
@@ -354,6 +361,51 @@
      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXF34HD5"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <div role="main" id="corrida-zero7-captacao-72bdbbbbbb9d8f539277"></div>
+    <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+    
+    <script type="text/javascript">
+      console.log("🟢 Script iniciado: Criando formulário da RD Station...");
+      new RDStationForms('corrida-zero7-captacao-72bdbbbbbb9d8f539277', 'null').createForm();
+    
+      function getUTMParameter(name) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(name) || '';
+      }
+    
+      document.addEventListener("DOMContentLoaded", function () {
+          const checkFormLoaded = setInterval(function () {
+              const form = document.querySelector("#corrida-zero7-captacao-72bdbbbbbb9d8f539277 form");
+    
+              if (form) {
+                  clearInterval(checkFormLoaded);
+                  console.log("✅ Formulário encontrado!");
+    
+                  const utmFields = [
+                      { name: "cf_utm_campaign", value: getUTMParameter("utm_campaign") },
+                      { name: "cf_utm_content", value: getUTMParameter("utm_content") },
+                      { name: "cf_utm_id", value: getUTMParameter("utm_id") },
+                      { name: "cf_utm_medium", value: getUTMParameter("utm_medium") },
+                      { name: "cf_utm_source", value: getUTMParameter("utm_source") },
+                      { name: "cf_utm_term", value: getUTMParameter("utm_term") }
+                  ];
+    
+                  utmFields.forEach(field => {
+                      const input = document.createElement("input");
+                      input.type = "hidden";
+                      input.name = field.name;
+                      input.value = field.value;
+                      form.appendChild(input);
+                      console.log(`✅ Campo oculto adicionado: ${field.name} = ${field.value}`);
+                  });
+    
+                  console.log("🚀 Campos UTM inseridos no formulário com sucesso!");
+              }
+          }, 300); // Verifica a cada 300ms
+      });
+    </script>
+    
+    
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
     <script>
       // Initialize Lenis with options
