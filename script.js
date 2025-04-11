@@ -28,6 +28,10 @@ if (larguraDaTela < 800) {
           el: ".swiper-pagination",
           clickable: true,
         },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
       });
 } else {
     var swiper3 = new Swiper(".mySwiper3", {
@@ -38,6 +42,10 @@ if (larguraDaTela < 800) {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
 }
@@ -54,6 +62,10 @@ if (larguraDaTela < 800) {
         clickable: true,
       },
       spaceBetween: 20,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
 } else {
   var swiper4 = new Swiper(".mySwiper4", {
@@ -64,6 +76,10 @@ if (larguraDaTela < 800) {
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
     });
 }
