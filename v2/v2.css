@@ -1,0 +1,27 @@
+header#home.v2 h1 {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+header#home.v2 p {
+    font-size: 1.4rem;
+}
+
+header#home.v2 p span {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+@media (min-width: 1080px) {
+    header#home.v2 h1 {
+        font-size: 4rem;
+    }
+
+    header#home.v2 P {
+        font-size: 1.8rem;
+    }
+
+    header#home.v2 p span {
+        font-size: 1.8rem;
+    }
+}
